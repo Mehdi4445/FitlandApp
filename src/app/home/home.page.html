@@ -1,5 +1,10 @@
 <ion-content [fullscreen]="true">
 
+  <ion-item class="top" color="dark">
+    <ion-label>Rest Duration</ion-label>
+    <ion-datetime #myPicker display-format="mm:ss" placeholder="Pick it" [(ngModel)]="fullTime" (ionChange)="updateMyDate(myPicker.value)"></ion-datetime>
+  </ion-item>
+
 
   <div id="container">
     
