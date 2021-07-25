@@ -18,6 +18,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       radius: 100,
       outerStrokeWidth: 16,
       innerStrokeWidth: 8,
+      subtitle: "FITLAND",
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
       animationDuration: 300,

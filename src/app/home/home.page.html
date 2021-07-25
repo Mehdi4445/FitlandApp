@@ -18,19 +18,23 @@
   [maxPercent]="100"
   [radius]="radius"
   [showTitle]="false"  
-  [showSubtitle]="false"
+  [showSubtitle]="true"
   [subtitle]="remainingTime"
-  [subtitleFontSize]="40"
+  [subtitleFontSize]="35"
   [showUnits]="false"
   [outerStrokeWidth]="16"
-  [outerStrokeColor]="'#8000FF'"
+  [outerStrokeColor]="'#bec901'"
   [showZeroOuterStroke]="false"
   [backgroundStroke]="'#bec901'"
   [backgroundStrokeWidth]="3"
   [outerStrokeGradient]="true"
-  [outerStrokeGradientStopColor]="'#FF00CB'"
+  [outerStrokeGradientStopColor]="'#ffc409'"
   [showInnerStroke]="false"
 ></circle-progress>
+
+<p>Total workout :</p>
+
+<p>{{ elapsed.h }}:{{ elapsed.m }}:{{ elapsed.s }}</p>
 
 
   </div>
