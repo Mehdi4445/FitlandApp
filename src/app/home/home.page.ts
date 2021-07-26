@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Insomnia } from '@ionic-native/insomnia/ngx';
+
 
 @Component({
   selector: 'app-home',
@@ -24,6 +26,18 @@ export class HomePage {
 
   overallTimer: any = false;
 
+  countDownTimer: any = false;
+
+  timeLeft: any = {
+    m: '00',
+    s: '00'
+  };
+
+
+  constructor(private insomnia: Insomnia) { 
+
+  }
+
   startTimer(){
 
     if(this.timer){
@@ -31,6 +45,7 @@ export class HomePage {
     }
     if(!this.overallTimer){
       this.progressTimer();
+      this.insomnia.keepAwake();
     }
 
     this.timer = false;
@@ -79,6 +94,27 @@ export class HomePage {
       let s = num+"";
       while (s.length < size) s = "0" + s;
       return s;
+    }
+
+    stopTimer() {
+      clearInterval(this.countDownTimer);
+      clearInterval(this.timer);
+      clearInterval(this.overallTimer);
+      this.countDownTimer = false;
+      this.overallTimer = false;
+      this.timer = false;    
+      this.percent = 0;
+      this.progress = 0;
+      this.elapsed = {
+        h: '00',
+        m: '00',
+        s: '00'
+      }
+      this.timeLeft = {
+        m: '00',
+        s: '00'
+      }
+      this.insomnia.allowSleepAgain()
     }
 
 
